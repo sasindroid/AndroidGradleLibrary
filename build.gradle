@@ -5,10 +5,39 @@ or build anything, it just tells a joke.
 
 */
 
+apply plugin: 'application'
+
+// This line tells the application plugin what class to run
+mainClassName = "com.udacity.gradle.JokeTeller"
+
+/*
+
+Then use the `run` task to execute the project. Remember you can also execute
+Java using the built in JavaExec task type.
+
+*/
+
+task solutionExecute(type: JavaExec) {
+    main = mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+
+
+/*
+
 task tellJoke << {
     println "What's a build master's favorite black metal band?"
     println "Gradle of Filth!"
 }
+
+task tellJokeAnother << {
+    println "What's a second Joke?"
+    println "Not a joke man!"
+}
+
+*/
+
 
 /*
 
